@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Headers from './components/Headers'
+import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import AboutUs from './pages/AboutUs'
 import Coordinator from './pages/Coordinator'
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/competition" element={<Competitions />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </>
   )
 }

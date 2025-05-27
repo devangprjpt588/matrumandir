@@ -1,10 +1,35 @@
 import Banner from '../components/Banner'
+import Card from '../components/Card'
+import Gallery from '../components/Gallery'
 import { Link } from 'react-router-dom'
 import { MoveRight } from 'lucide-react'
-import homeBg from '../assets/carousel1.png'
-import whoWeAre from '../assets/whoweare.png'
+import homeBgImg from '../assets/carousel1.png'
+import whoWeAreImg from '../assets/whoweare.png'
+import yogaImg from '../assets/yoga.png'
+import shootingImg from '../assets/shooting.png'
+import tennisImg from '../assets/tennis.png'
 
 function HomePage() {
+  const activities = [
+    {
+      title: "Yoga",
+      description: "Discover the power of yoga and unlock a healthier, more balanced life!",
+      image: yogaImg,
+      link: "/competition",
+    },
+    {
+      title: "Shooting Range",
+      description: "Join our expert-led coaching program and take your shooting skills to the next level! ",
+      image: shootingImg,
+      link: "/competition",
+    },
+    {
+      title: "Table Tennis",
+      description: "Whether you’re looking for expert coaching or just want to enjoy a game, our table tennis facility.",
+      image: tennisImg,
+      link: "/competition",
+    },
+  ];
   return (
     <>
       <Banner
@@ -12,7 +37,7 @@ function HomePage() {
         subtitle="Empowering Youth, Inspiring Futures"
         primaryBtn={{ label: "View Competition", link: "/competition" }}
         secondaryBtn={{ label: "Join Us", link: "/contact" }}
-        backgroundImage={homeBg}
+        backgroundImage={homeBgImg}
       />
       <section>
         <div className="2xl:container mx-auto px-6 my-24">
@@ -36,7 +61,7 @@ function HomePage() {
               </Link>
             </div>
             <div className="w-full lg:w-1/2 mt-10 lg:mt-0">
-              <img src={whoWeAre} alt="Who We Are" className="w-full h-auto object-cover" />
+              <img src={whoWeAreImg} alt="Who We Are" className="w-full h-auto object-cover" />
             </div>
           </div>
         </div>
@@ -56,15 +81,35 @@ function HomePage() {
             </div>
             <div className="w-full">
               <div className="lg:w-full mx-auto md:flex md:flex-wrap">
-                <div className="w-full md:w-1/3 flex items-stretch h-auto">
-                  <div className="py-6 px-4">
-                    <div className='w-full flex items-stretch h-full'>
-                      <div className='lg:shadow-md lg:hover:shadow-lg bg-[#F8F8F8] hover:bg-gradient-to-b from-[#feffe3] from-5% via-[#F8F8F8] via-70% to-[#feffe3] to-95% rounded-md'>
-                        
-                      </div>
-                    </div>
-                  </div>
+                <div className="flex flex-wrap -mx-4">
+                  {activities.map((item, index) => (
+                    <Card
+                      key={index}
+                      title={item.title}
+                      description={item.description}
+                      image={item.image}
+                      link={item.link}
+                    />
+                  ))}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="2xl:container mx-auto px-6 py-24">
+          <div className="flex flex-wrap flex-col">
+            <div className="w-full">
+              <div className="pb-12 text-center">
+                <h2 className="text-2xl md:text-5xl font-bold mb-8">
+                  Moments Of Joy
+                </h2>
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="lg:w-full mx-auto md:flex md:flex-wrap justify-center">
+                <Gallery />
               </div>
             </div>
           </div>
