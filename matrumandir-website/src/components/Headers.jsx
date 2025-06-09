@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
 export default function Header() {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
   const [loginDrawerOpen, setLoginDrawerOpen] = useState(false)
+  const [showForgotPassword, setShowForgotPassword] = useState(false)
+  const navigate = useNavigate()
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -93,66 +95,127 @@ export default function Header() {
       )}
     </header>
     {/* Login Drawer */}
-<div
-  className={`fixed inset-0 z-50 flex justify-end transition-opacity duration-300 ${
-    loginDrawerOpen ? 'bg-black bg-opacity-50 visible' : 'bg-transparent invisible'
-  }`}
-  onClick={toggleDrawer} // Close on background click
->
-  <div
-    className={`bg-white w-full max-w-sm h-full shadow-lg p-6 transform transition-transform duration-300 ${
-      loginDrawerOpen ? 'translate-x-0' : 'translate-x-full'
-    }`}
-    onClick={(e) => e.stopPropagation()} // Prevent closing on drawer click
-  >
-    <div className="flex justify-between items-center mb-4">
-      <h2 className="text-xl font-semibold text-[#ff680B]">Login</h2>
-      <button onClick={toggleDrawer} className="text-gray-600 hover:text-black">
-        <X size={24} />
-      </button>
-    </div>
+    {loginDrawerOpen && (
+      <div className="fixed inset-0 z-50 flex justify-end">
+        {/* Background Overlay */}
+        <div
+          className="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
+          onClick={() => {
+            setLoginDrawerOpen(false)
+            setShowForgotPassword(false)
+          }}
+        ></div>
 
-    <form className="space-y-4">
-      <div>
-        <label className="block mb-1 font-medium">Email</label>
-        <input
-          type="email"
-          className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff680B]"
-          placeholder="Enter your email"
-        />
+        {/* Drawer Panel */}
+        <div
+          className="relative bg-white w-full max-w-sm h-full shadow-lg p-6 transform transition-transform duration-300 translate-x-0"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold text-[#ff680B]">
+              {showForgotPassword ? 'Forgot Password' : 'Login'}
+            </h2>
+            <button
+              onClick={() => {
+                setLoginDrawerOpen(false)
+                setShowForgotPassword(false)
+              }}
+              className="text-gray-600 hover:text-black"
+            >
+              <X size={24} />
+            </button>
+          </div>
+
+          {showForgotPassword ? (
+            // Forgot Password Form
+            <form
+              className="space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault()
+                navigate('/dashboard') // on submit, go to dashboard
+              }}
+            >
+              <div>
+                <label className="block mb-1 font-medium">Email</label>
+                <input
+                  type="email"
+                  className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff680B]"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              <div className="flex justify-between space-x-4">
+                <button
+                  type="button"
+                  className="w-1/2 border border-gray-300 py-2 rounded-md hover:bg-gray-100"
+                  onClick={() => {
+                    setLoginDrawerOpen(false)
+                    setShowForgotPassword(false)
+                    navigate('/') // Cancel redirects to home
+                  }}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="w-1/2 bg-[#ff680B] text-white py-2 rounded-md font-medium hover:bg-[#e65d00]"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          ) : (
+            // Login Form
+            <form className="space-y-4">
+              <div>
+                <label className="block mb-1 font-medium">Email</label>
+                <input
+                  type="email"
+                  className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff680B]"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div>
+                <label className="block mb-1 font-medium">Password</label>
+                <input
+                  type="password"
+                  className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff680B]"
+                  placeholder="Enter your password"
+                />
+              </div>
+
+              <div className="text-right">
+                <button
+                  type="button"
+                  onClick={() => setShowForgotPassword(true)}
+                  className="text-sm text-[#ff680B] no-underline hover:underline bg-transparent hover:border-transparent"
+                >
+                  Forgot your password?
+                </button>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-[#ff680B] text-white py-2 rounded-md font-medium hover:bg-[#e65d00]"
+              >
+                Login
+              </button>
+
+              <div className="text-center text-sm mt-4">
+                Don’t have an account?{' '}
+                <a href="#" className="text-[#ff680B] font-medium hover:underline">Sign up</a>
+              </div>
+            </form>
+          )}
+
+          <div className="text-center text-xs text-gray-500 mt-6">
+            Designed by Vedant Innovision
+          </div>
+        </div>
       </div>
-
-      <div>
-        <label className="block mb-1 font-medium">Password</label>
-        <input
-          type="password"
-          className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#ff680B]"
-          placeholder="Enter your password"
-        />
-      </div>
-
-      <div className="text-right">
-        <a href="#" className="text-sm text-[#ff680B] hover:underline">Forgot your password?</a>
-      </div>
-
-      <button
-        type="submit"
-        className="w-full bg-[#ff680B] text-white py-2 rounded-md font-medium hover:bg-[#e65d00]"
-      >
-        Login
-      </button>
-
-      <div className="text-center text-sm mt-4">
-        Don't have an account?{' '}
-        <a href="#" className="text-[#ff680B] font-medium hover:underline">Sign up</a>
-      </div>
-    </form>
-
-    <div className="text-center text-xs text-gray-500 mt-6">
-      Designed by Vedant Innovision
-    </div>
-  </div>
-</div>
+    )}
     </>
   )
 }
