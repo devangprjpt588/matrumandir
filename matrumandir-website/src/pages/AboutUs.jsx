@@ -12,7 +12,7 @@ function AboutUs() {
       <Banner
         title="मातृमंदिर विश्वस्त संस्था"
         subtitle="About Us"
-        primaryBtn={{ label: "View Programs", link: "/programs" }}
+        primaryBtn={{ label: "View Activities", link: "/activities" }}
         secondaryBtn={{ label: "Join Us", link: "/contact" }}
         backgroundImage={aboutBgImg}
       />

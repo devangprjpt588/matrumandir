@@ -42,7 +42,7 @@ function Footer() {
                 <Link to="/" className="text-white w-fit hover:text-[#ff680B]">Home</Link>
                 <Link to="/about" className="text-white w-fit hover:text-[#ff680B]">About Us</Link>
                 <Link to="/coordinator" className="text-white w-fit hover:text-[#ff680B]">Coordinator</Link>
-                <Link to="/programs" className="text-white w-fit hover:text-[#ff680B]">Programs</Link>
+                <Link to="/activities" className="text-white w-fit hover:text-[#ff680B]">Activities</Link>
                 <Link to="/competition" className="text-white w-fit hover:text-[#ff680B]">Competition</Link>
                 <Link to="/contact" className="text-white w-fit hover:text-[#ff680B]">Contact</Link>
             </div>

@@ -72,7 +72,7 @@ function HomePage() {
             <div className="w-full">
               <div className="pb-12 text-center">
                 <h2 className="text-2xl md:text-5xl font-bold mb-8">
-                  Our Recent Activities
+                  Our Activities
                 </h2>
                 <p className="w-5/6 mx-auto">
                   A multifarious institution working in the fields of Education, Research, Rural Development, Women Power, Youth Organisation, National Integration and Health, with a view to Motivation Building and Attitude Formation of every person in all age groups to Change the Face of India for Better.

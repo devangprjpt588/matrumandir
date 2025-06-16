@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import StepperForm from './StepperForm'
 import { Menu, X } from 'lucide-react'
 
 export default function Header() {
@@ -8,12 +9,14 @@ export default function Header() {
   const [loginDrawerOpen, setLoginDrawerOpen] = useState(false)
   const [showForgotPassword, setShowForgotPassword] = useState(false)
   const navigate = useNavigate()
+  const [showSignupModal, setShowSignupModal] = useState(false);
+
 
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Coordinator', path: '/coordinator' },
-    { name: 'Programs', path: '/programs' },
+    { name: 'Activities', path: '/activities' },
     { name: 'Competition', path: '/competition' },
     { name: 'Contact', path: '/contact' }
   ]
@@ -205,7 +208,10 @@ export default function Header() {
 
               <div className="text-center text-sm mt-4">
                 Don’t have an account?{' '}
-                <a href="#" className="text-[#ff680B] font-medium hover:underline">Sign up</a>
+                <a href="#" onClick={(e) => {
+                  e.preventDefault();
+                  setShowSignupModal(true);
+                }} className="text-[#ff680B] font-medium hover:underline">Sign up</a>
               </div>
             </form>
           )}
@@ -216,6 +222,29 @@ export default function Header() {
         </div>
       </div>
     )}
+    {/* Signup Modal */}
+      {showSignupModal && (
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center"
+          onClick={() => setShowSignupModal(false)} // close on background click
+        >
+          <div
+            className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg shadow-lg relative"
+            onClick={(e) => e.stopPropagation()} // prevent modal close when clicked inside
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowSignupModal(false)}
+              className="absolute top-4 right-4 text-gray-600 hover:text-black"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Stepper Form */}
+            <StepperForm />
+          </div>
+        </div>
+      )}
     </>
   )
 }

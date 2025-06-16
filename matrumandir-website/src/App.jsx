@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import AboutUs from './pages/AboutUs'
 import Coordinator from './pages/Coordinator'
-import Programs from './pages/Programs'
+import Activities from './pages/Activities'
 import Competitions from './pages/Competitions'
 import Contact from './pages/Contact'
 
@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/coordinator" element={<Coordinator />} />
-        <Route path="/programs" element={<Programs />} />
+        <Route path="/activities" element={<Activities />} />
         <Route path="/competition" element={<Competitions />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

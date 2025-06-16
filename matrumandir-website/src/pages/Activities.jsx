@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Programs() {
+function Activities() {
   return (
     <div>Programs</div>
   )
 }
 
-export default Programs
+export default Activities
