@@ -3,7 +3,7 @@ import { MoveRight } from "lucide-react";
 
 const Card = ({ image, title, description, link }) => {
   return (
-    <div className="w-full md:w-1/3 flex items-stretch h-auto">
+    <div className="w-full md:w-1/4 flex items-stretch h-auto">
       <div className="py-6 px-4 w-full">
         <div className="w-full flex items-stretch h-full">
           <div className="lg:shadow-md lg:hover:shadow-lg bg-white rounded-md flex flex-col justify-between">

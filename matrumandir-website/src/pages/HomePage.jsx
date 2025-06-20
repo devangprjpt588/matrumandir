@@ -12,23 +12,29 @@ import tennisImg from '../assets/tennis.png'
 function HomePage() {
   const activities = [
     {
-      title: "Yoga",
-      description: "Discover the power of yoga and unlock a healthier, more balanced life!",
+      title: "Guru Purnima",
+      description: "Guru Purnima is the foundation day of the organization. On this day, individuals who have ...",
       image: yogaImg,
-      link: "/competition",
+      link: "/activities",
     },
     {
-      title: "Shooting Range",
-      description: "Join our expert-led coaching program and take your shooting skills to the next level! ",
+      title: "Essay Competition",
+      description: "The Matrumandir Trust organized the prize distribution ceremony for the 14th State-Level Essay Competition ...",
       image: shootingImg,
-      link: "/competition",
+      link: "/activities",
     },
     {
-      title: "Table Tennis",
-      description: "Whether you’re looking for expert coaching or just want to enjoy a game, our table tennis facility.",
+      title: "Sant Wadamaya Award",
+      description: "The Matrumandir Trust organizes the prestigious Sant Wadamaya Awards every year...",
       image: tennisImg,
-      link: "/competition",
+      link: "/activities",
     },
+    {
+      title: "Group Singing and Other Competitions",
+      description: "After a two-year gap due to the pandemic, these competitions resumed in their 28th year ...",
+      image: tennisImg,
+      link: "/activities",
+    }
   ];
   return (
     <>
