@@ -26,26 +26,33 @@ function Coordinator() {
         secondaryBtn={{ label: "Join Us", link: "/contact" }}
         backgroundImage={coordinatorBgImg}
       />
-      
-      <section>
-        <div className="2xl:container mx-auto px-6 my-24">
-          <h2 className="text-3xl font-bold text-center mb-4 text-[#ff680B]">Our Coordinators</h2>
-          <p className="text-xl text-center text-gray-600 mb-8">
-            Meet the dedicated team of leaders who guide and support our organization’s mission.
-          </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {coordinators.map((person, index) => (
-              <div key={index} className="bg-white shadow-lg p-4 text-center rounded-md hover:shadow-xl transition">
-                <img
-                  src={dummyImg}
-                  alt={person.name}
-                  className="w-24 h-24 mx-auto object-cover rounded-full mb-4 border-2 border-[#ff680B]"
-                />
-                <h3 className="text-lg font-semibold text-gray-800">{person.name}</h3>
-                <p className="text-sm text-[#ff680B] mt-1">{person.role}</p>
-              </div>
-            ))}
+      <section>
+        <div className="max-w-7xl mx-auto px-6 my-24">
+          <div className="w-full">
+            <div className="pb-24 text-center">
+              <h2 className="text-2xl md:text-5xl font-bold mb-8">
+                Our Coordinators
+              </h2>
+              <p className="w-5/6 mx-auto">
+                Meet the dedicated team of leaders who guide and support our organization’s mission.
+              </p>
+            </div>
+          </div>
+          <div className='md:w-11/12 mx-auto'>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {coordinators.map((person, index) => (
+                <div key={index} className="bg-white shadow-lg p-4 text-center rounded-md hover:shadow-xl transition">
+                  <img
+                    src={dummyImg}
+                    alt={person.name}
+                    className="w-24 h-24 mx-auto object-cover rounded-full mb-4 border-2 border-[#ff680B]"
+                  />
+                  <h3 className="text-lg font-semibold text-gray-800">{person.name}</h3>
+                  <p className="text-sm text-[#ff680B] mt-1">{person.role}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

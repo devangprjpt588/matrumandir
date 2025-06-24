@@ -17,8 +17,8 @@ function AboutUs() {
         backgroundImage={aboutBgImg}
       />
       <section>
-        <div className="2xl:container mx-auto px-6 my-24">
-          <div className="flex flex-col lg:flex-row items-start md:px-6">
+        <div className="max-w-7xl mx-auto px-6 my-24">
+          <div className="flex flex-col lg:flex-row items-start px-6">
             <div className="w-full lg:w-1/2 space-y-4 lg:pr-16">
               <h2 className="text-4xl font-semibold pb-4">
                 Who We Are
@@ -37,33 +37,37 @@ function AboutUs() {
         </div>
       </section>
       <section className="bg-slate-100">
-        <div className="2xl:container mx-auto px-4 md:px-12 py-24 flex flex-col lg:flex-row gap-12">
-          <div className="w-full lg:w-1/2 space-y-6">
-              <img src={visionImg} className="rounded-lg" alt="" />
-              <h3 className="text-2xl font-semibold text-[#ff680B] mb-4">Our Vision</h3>
-              <p>
-                A complete metamorphosis of our ancient society into a vibrant Nation, with spirituality at its core and manifestation of excellence and modernity into an outwardly diverse yet internally integrated human life, is the vision of Jnana Prabodhini.
-              </p>
-              <p>  
-                A new integration has been envisaged for this. Combining spirituality with modern technology; human potentials like intelligence and giftedness are to be harnessed into leadership abilities and social concern.
-              </p>
-              <p>  
-                It is believed that while triggering one’s achievement motivation, it could be possible to submerge its outcome into service of humanity with compassion. This also matches with the concept of ‘Trusteeship’ propounded by Mahatma Gandhi.
-              </p>
+        <div className="max-w-7xl mx-auto px-4 py-24">
+          <div className='w-full md:w-11/12 mx-auto'>
+            <div className='flex flex-col lg:flex-row gap-12'>
+              <div className="w-full lg:w-1/2 space-y-6">
+                <img src={visionImg} className="rounded-lg" alt="" />
+                <h3 className="text-2xl font-semibold text-[#ff680B] mb-4">Our Vision</h3>
+                <p>
+                  A complete metamorphosis of our ancient society into a vibrant Nation, with spirituality at its core and manifestation of excellence and modernity into an outwardly diverse yet internally integrated human life, is the vision of Jnana Prabodhini.
+                </p>
+                <p>
+                  A new integration has been envisaged for this. Combining spirituality with modern technology; human potentials like intelligence and giftedness are to be harnessed into leadership abilities and social concern.
+                </p>
+                <p>
+                  It is believed that while triggering one’s achievement motivation, it could be possible to submerge its outcome into service of humanity with compassion. This also matches with the concept of ‘Trusteeship’ propounded by Mahatma Gandhi.
+                </p>
+              </div>
+              <div className="w-full lg:w-1/2 space-y-6">
+                <img src={missionImg} className="rounded-lg" alt="" />
+                <h3 className="text-2xl font-semibold text-[#ff680B] mb-4">Our Mission</h3>
+                <p>
+                  Knitting an organization of selfless workers, leading directly and in-directly the social movements to transform their respective working fields, is the mission of Jnana Prabodhini.
+                </p>
+                <p>
+                  This needs a continuum in education and training processes, both for boys and girls, men and women of all age groups; from pre-schooling to real life situations.
+                </p>
+                <p>
+                  That requires building a multi-dimensional institution with an experimental character in leadership development in all walks of life. This is not a one-time process, but continuous experimentation is required to evolve processes and methods of encouraging people of all age groups to undertake tasks and challenges in various work fields of life.
+                </p>
+              </div>
             </div>
-            <div className="w-full lg:w-1/2 space-y-6">
-              <img src={missionImg} className="rounded-lg" alt="" />
-              <h3 className="text-2xl font-semibold text-[#ff680B] mb-4">Our Mission</h3>
-              <p>
-                Knitting an organization of selfless workers, leading directly and in-directly the social movements to transform their respective working fields, is the mission of Jnana Prabodhini.
-              </p>
-              <p>
-                This needs a continuum in education and training processes, both for boys and girls, men and women of all age groups; from pre-schooling to real life situations.
-              </p>
-              <p>
-                That requires building a multi-dimensional institution with an experimental character in leadership development in all walks of life. This is not a one-time process, but continuous experimentation is required to evolve processes and methods of encouraging people of all age groups to undertake tasks and challenges in various work fields of life.
-              </p>
-            </div>
+          </div>
         </div>
       </section>
     </>

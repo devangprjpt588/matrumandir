@@ -46,7 +46,7 @@ function HomePage() {
         backgroundImage={homeBgImg}
       />
       <section>
-        <div className="2xl:container mx-auto px-6 my-24">
+        <div className="max-w-7xl mx-auto px-6 my-24">
           <div className="flex flex-col lg:flex-row items-start px-6">
             <div className="w-full lg:w-1/2 space-y-4 lg:pr-16">
               <h2 className="text-4xl font-semibold pb-4">
@@ -73,7 +73,7 @@ function HomePage() {
         </div>
       </section>
       <section className='bg-slate-100'>
-        <div className="2xl:container mx-auto px-6 py-24">
+        <div className="max-w-7xl mx-auto px-6 py-24">
           <div className="flex flex-wrap flex-col">
             <div className="w-full">
               <div className="pb-12 text-center">
@@ -104,7 +104,7 @@ function HomePage() {
         </div>
       </section>
       <section>
-        <div className="2xl:container mx-auto px-6 py-24">
+        <div className="max-w-7xl mx-auto px-6 py-24">
           <div className="flex flex-wrap flex-col">
             <div className="w-full">
               <div className="pb-12 text-center">

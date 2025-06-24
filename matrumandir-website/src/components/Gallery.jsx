@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import 'yet-another-react-lightbox/styles.css'
 import Lightbox from 'yet-another-react-lightbox';
 import { Link } from 'react-router-dom'
@@ -28,6 +29,8 @@ export default function Gallery() {
     setOpen(true);
   };
 
+  const location = useLocation();
+
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -42,12 +45,11 @@ export default function Gallery() {
         ))}
       </div>
 
-      <Link to="/programs"
-            className="mt-16 inline-flex items-center gap-3 bg-transparent hover:bg-[#ff680B] text-[#ff680B] hover:text-white border-2 border-[#ff680B] px-4 py-2 rounded-lg font-semibold transition ease-in-out"
-        >
-            <span>Read More</span>
-            <MoveRight />
+      {location.pathname !== "/gallery" && (
+        <Link to="/gallery" className="mt-16 inline-flex items-center gap-3 bg-transparent hover:bg-[#ff680B] text-[#ff680B] hover:text-white border-2 border-[#ff680B] px-4 py-2 rounded-lg font-semibold transition ease-in-out">
+          Read More
         </Link>
+      )}
 
       <Lightbox
         open={open}

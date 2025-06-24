@@ -6,7 +6,7 @@ import logoOm from "../assets/matrumandir-logo.svg";
 function Footer() {
   return (
     <footer className="bg-[#2c333a] text-white">
-      <div className="2xl:container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-12">
         
         {/* Column 1: Logo and Contact Info */}
         <div className="flex-1 space-y-6">
@@ -44,6 +44,7 @@ function Footer() {
                 <Link to="/coordinator" className="text-white w-fit hover:text-[#ff680B]">Coordinator</Link>
                 <Link to="/activities" className="text-white w-fit hover:text-[#ff680B]">Activities</Link>
                 <Link to="/competition" className="text-white w-fit hover:text-[#ff680B]">Competition</Link>
+                <Link to="/gallery" className="text-white w-fit hover:text-[#ff680B]">Gallery</Link>
                 <Link to="/contact" className="text-white w-fit hover:text-[#ff680B]">Contact</Link>
             </div>
           </div>

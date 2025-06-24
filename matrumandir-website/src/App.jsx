@@ -6,6 +6,7 @@ import AboutUs from './pages/AboutUs'
 import Coordinator from './pages/Coordinator'
 import Activities from './pages/Activities'
 import Competitions from './pages/Competitions'
+import GalleryPage from './pages/GalleryPage'
 import Contact from './pages/Contact'
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/coordinator" element={<Coordinator />} />
         <Route path="/activities" element={<Activities />} />
         <Route path="/competition" element={<Competitions />} />
+        <Route path="/gallery" element={<GalleryPage/>} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
