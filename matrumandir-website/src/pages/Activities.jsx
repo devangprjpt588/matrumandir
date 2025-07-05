@@ -66,7 +66,7 @@ function Activities() {
                   </div>
                   <div className='w-full pb-24 border-t-2 border-[#ff680B]'></div>
                   <div className="flex flex-col md:flex-row mb-24">
-                    <div className="md:w-2/5 px-4 mt-8 md:mt-0">
+                    <div className="md:w-2/5 px-4 mt-8 md:mt-0 mb-8 md:mb-0">
                       <img alt="Guru Purnima" className="w-full h-auto rounded shadow-lg object-cover" src={shootingImg} />
                     </div>
                     <div className="md:w-3/5 px-4">
@@ -164,7 +164,7 @@ function Activities() {
                   </div>
                   <div className='w-full pb-24 border-t-2 border-[#ff680B]'></div>
                   <div className="flex flex-col md:flex-row">
-                    <div className="md:w-2/5 px-4 mt-8 md:mt-0">
+                    <div className="md:w-2/5 px-4 mt-8 md:mt-0 mb-8 md:mb-0">
                       <img alt="Guru Purnima" className="w-full h-auto rounded shadow-lg object-cover" src={shootingImg} />
                     </div>
                     <div className="md:w-3/5 px-4">

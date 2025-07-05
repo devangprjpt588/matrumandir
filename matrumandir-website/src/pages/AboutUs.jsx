@@ -18,7 +18,7 @@ function AboutUs() {
       />
       <section>
         <div className="max-w-7xl mx-auto px-6 my-24">
-          <div className="flex flex-col lg:flex-row items-start px-6">
+          <div className="flex flex-col lg:flex-row items-start">
             <div className="w-full lg:w-1/2 space-y-4 lg:pr-16">
               <h2 className="text-4xl font-semibold pb-4">
                 Who We Are

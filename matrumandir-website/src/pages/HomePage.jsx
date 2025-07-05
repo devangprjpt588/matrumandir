@@ -3,7 +3,7 @@ import Card from '../components/Card'
 import Gallery from '../components/Gallery'
 import { Link } from 'react-router-dom'
 import { MoveRight } from 'lucide-react'
-import homeBgImg from '../assets/carousel1.png'
+import homeBgImg from '../assets/hero-banner.png'
 import whoWeAreImg from '../assets/whoweare.png'
 import yogaImg from '../assets/yoga.png'
 import shootingImg from '../assets/shooting.png'
@@ -47,7 +47,7 @@ function HomePage() {
       />
       <section>
         <div className="max-w-7xl mx-auto px-6 my-24">
-          <div className="flex flex-col lg:flex-row items-start px-6">
+          <div className="flex flex-col lg:flex-row items-start">
             <div className="w-full lg:w-1/2 space-y-4 lg:pr-16">
               <h2 className="text-4xl font-semibold pb-4">
                 Who We Are
