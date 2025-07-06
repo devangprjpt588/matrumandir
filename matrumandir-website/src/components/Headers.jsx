@@ -18,6 +18,7 @@ export default function Header() {
     { name: 'Coordinator', path: '/coordinator' },
     { name: 'Activities', path: '/activities' },
     { name: 'Competition', path: '/competition' },
+    { name: 'Results', path: '/results' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' }
   ]
