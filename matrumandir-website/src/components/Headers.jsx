@@ -18,10 +18,16 @@ export default function Header() {
     { name: 'Coordinator', path: '/coordinator' },
     { name: 'Activities', path: '/activities' },
     { name: 'Competition', path: '/competition' },
-    { name: 'Results', path: '/results' },
+    {
+      name: 'Results',
+      subItems: [
+        { name: 'Essay Results', path: '/results/essay-results' },
+        { name: 'Singing Results', path: '/results/singing-results' }
+      ]
+    },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' }
-  ]
+  ];
 
   const toggleDrawer = () => {
     setLoginDrawerOpen(!loginDrawerOpen)
@@ -38,22 +44,35 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-6">
-            {navItems.map(item => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`font-medium transition ${location.pathname === item.path
-                    ? 'text-[#ff680B] font-semibold'
-                    : 'text-black hover:text-[#ff680B]'
-                  }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <button
-              onClick={toggleDrawer}
-              className="text-white hover:text-[#ff680B] font-medium bg-[#ff680B] hover:bg-white font-semibold border-2 hover:border-[#ff680B] transition ease-in-out"
-            >
+            {navItems.map(item =>
+              item.subItems ? (
+                <div className="relative group" key={item.name}>
+                  <span className={`cursor-pointer font-medium ${location.pathname.includes('/results') ? 'text-[#ff680B] font-semibold' : 'text-black hover:text-[#ff680B]'}`}>
+                    {item.name}
+                  </span>
+                  <div className="absolute left-0 mt-2 w-48 bg-white border rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
+                    {item.subItems.map(sub => (
+                      <Link
+                        key={sub.name}
+                        to={sub.path}
+                        className="block px-4 py-2 text-sm text-black hover:bg-[#ff680B] hover:text-white"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`font-medium transition ${location.pathname === item.path ? 'text-[#ff680B] font-semibold' : 'text-black hover:text-[#ff680B]'}`}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
+            <button onClick={toggleDrawer} className="text-white hover:text-[#ff680B] font-medium bg-[#ff680B] hover:bg-white font-semibold border-2 hover:border-[#ff680B] transition ease-in-out px-4 py-2 rounded-md">
               Login
             </button>
           </nav>
@@ -80,19 +99,34 @@ export default function Header() {
         {menuOpen && (
           <div className="md:hidden px-4 pb-4 bg-white">
             <nav className="flex flex-col space-y-2">
-              {navItems.map(item => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`font-medium transition ${location.pathname === item.path
-                      ? 'text-[#ff680B] font-semibold'
-                      : 'text-black hover:text-[#ff680B]'
-                    }`}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map(item =>
+                item.subItems ? (
+                  <div key={item.name} className="space-y-1">
+                    <span className="font-medium text-black">{item.name}</span>
+                    <div className="ml-4 space-y-1">
+                      {item.subItems.map(sub => (
+                        <Link
+                          key={sub.name}
+                          to={sub.path}
+                          onClick={() => setMenuOpen(false)}
+                          className={`block text-sm ${location.pathname === sub.path ? 'text-[#ff680B] font-semibold' : 'text-black hover:text-[#ff680B]'}`}
+                        >
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    onClick={() => setMenuOpen(false)}
+                    className={`font-medium transition ${location.pathname === item.path ? 'text-[#ff680B] font-semibold' : 'text-black hover:text-[#ff680B]'}`}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
             </nav>
           </div>
         )}

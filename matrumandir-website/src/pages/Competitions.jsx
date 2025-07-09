@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom'
 import { MoveRight } from 'lucide-react'
 import competitionBgImg from '../assets/carousel2.png'
 import CompetitionCard from "../components/CompetitionCard"
+import pdfFile from '../assets/Samuahgan_Compitation_Marathi.pdf';
 
 function Competitions() {
-  const [showSignupModal, setShowSignupModal] = useState(false);
+  // const [showSignupModal, setShowSignupModal] = useState(false);
   const [competitions, setCompetitions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -68,7 +69,7 @@ function Competitions() {
           Get all the official rules and guidelines for every competition in one place.
         </p>
         <a
-          href="../assets/Samuahgan_Compitation_Marathi.pdf"
+          href={pdfFile}
           download
           className="inline-block bg-[#ff680B] hover:bg-white text-white hover:text-[#ff680B] border-2 border-[#ff680B] font-semibold px-6 py-3 rounded-md transition duration-300"
         >

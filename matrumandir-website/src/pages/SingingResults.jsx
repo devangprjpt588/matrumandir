@@ -56,19 +56,19 @@ const resultData = [
     }
 ];
 
-const Results = () => {
+const SingingResults = () => {
     return (
         <>
             <Banner
                 title="मातृमंदिर विश्वस्त संस्था"
-                subtitle="Results"
+                subtitle="Singing Results"
                 primaryBtn={{ label: "View Activities", link: "/activities" }}
                 secondaryBtn={{ label: "Join Us", link: "/contact" }}
                 backgroundImage={competitionBgImg}
             />
             <div className="max-w-7xl mx-auto px-6 py-24">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-800">Competition Results</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-gray-800">Singing Results</h2>
                     <p className="mt-2 text-gray-600">Congratulations to all participants and winners!</p>
                 </div>
 
@@ -82,4 +82,4 @@ const Results = () => {
     );
 };
 
-export default Results;
+export default SingingResults;

@@ -7,7 +7,8 @@ import Coordinator from './pages/Coordinator'
 import Activities from './pages/Activities'
 import Competitions from './pages/Competitions'
 import CompetitionDetails from './pages/CompetitionDetails'
-import Results from './pages/Results'
+import EssayResults from './pages/EssayResults'
+import SingingResults from './pages/SingingResults'
 import GalleryPage from './pages/GalleryPage'
 import Contact from './pages/Contact'
 
@@ -22,7 +23,8 @@ export default function App() {
         <Route path="/activities" element={<Activities />} />
         <Route path="/competition" element={<Competitions />} />
         <Route path="/competition-details/:id" element={<CompetitionDetails />} />
-        <Route path="/results" element={<Results />} />
+        <Route path="/results/essay-results" element={<EssayResults />} />
+        <Route path="/results/singing-results" element={<SingingResults />} />
         <Route path="/gallery" element={<GalleryPage/>} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
